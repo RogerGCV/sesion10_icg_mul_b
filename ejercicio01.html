@@ -1,0 +1,30 @@
+<canvas id='tablero' width=500 height=450></canvas>
+<script>
+    function triangulo(cd,colorBorde,colorRelleno,grosorLinea){
+    ctx.beginPath();
+    ctx.strokeStyle = colorBorde;
+    ctx.fillStyle = colorRelleno;
+    ctx.lineWidth = grosorLinea;
+    ctx.moveTo(cd[0],cd[1]);
+    ctx.lineTo(cd[2],cd[3]);
+    ctx.lineTo(cd[4],cd[5]);
+    ctx.closePath();
+    ctx.stroke();
+    ctx.fill();
+    }
+
+    var c = document.getElementById('tablero')
+    var ctx = c.getContext('2d')
+ 
+    var arr1 = [3,243,21,143,420,273];
+    var arr2 = [3,323,78,390,321,51];
+    var arr3 = [3,100,60,50,410,400];
+
+    triangulo(arr1,"#FFBFD5","#FFBFD5"); 
+    <!-- Este color es un rosa palido cuyo rgb es de (255,191,213) -->
+    triangulo(arr2,'rgb(0, 128, 128)','rgb(0, 128, 128)');
+    <!-- Este color es un azul grisaseo que ya esta en rgb -->
+    triangulo(arr3,'olive','olive');
+    <!--Este color es un verde oliva cuyo rgb es de (128, 128, 0) -->
+
+</script>
